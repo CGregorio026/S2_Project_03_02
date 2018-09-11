@@ -13,12 +13,133 @@
 
 */
 /* Structural Styles */
+/* 
+The html tag targets the entire document, which turns the entire background page the color that it is set to.
+*/
 html {
     background-color: rgb(173, 189, 227);
 }
 
+/* 
+Font family is what is used to change the font of the body tag, while background color follows the same syntax as above.
+*/
+body {
+    background-color: rgb(227, 210, 173);
+    font-family: 'Century Gothic', sans-serif;
+}
+
+/* 
+The padding is individually set because it is unsure if the left and right are needed to be set to different padding sizes, or if they are needed to be set to a specific value later on in the document.
+*/
+footer {
+    background-color: rgb(208, 184, 109);
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+/* 
+The font style is set to normal as opposed to italics or opaque defaults set by the website. The font size is set using the font-size attribute, and the text is centered by using the text-align attribute. Padding top and bottom are the same as used above, though set to 10 px instead of 5.
+*/
+address {
+    font: normal;
+    font-size: 0.9em;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 /* Heading Styles */
+/* 
+Using the comma applies the attribute to both of the elements as they are both being treated as selectors. This is much easier than making two different selectors, but does have a separate need if only one of the heading tags are needed to be effected.
+*/
+h1,
+h2 {
+    font-weight: normal;
+}
+
 /* Navigation Styles */
+/* 
+The list style type allows you to specify what goes before a list item in a list. Setting it to none removes the discs. Line height sets the spacing between each line, and font-size sets the size of... the font.
+*/
+nav>ul {
+    list-style-type: none;
+    line-height: 2em;
+    font-size: 0.9em;
+}
+
+/* 
+Text decoration set to none removes the underlining of a link. Text color is set by color. The nav>ul>li>a sets every anchor tag inside of an element with said properties of the nav. The pseudo elements indicate in which state a certain attribute is applied to a link, link being an unvisited link, and visited being a visited link. Active is for any links in the process of or having been clicked, and hover being any links that have the mouse over them at any given time.
+*/
+nav>ul>li>a:link,
+nav>ul>li>a:visited {
+    text-decoration: none;
+    color: rgb(43, 59, 125);
+}
+
+nav>ul>li>a:active,
+nav>ul>li>a:hover {
+    color: rgb(212, 35, 35);
+}
+
 /* Article Styles */
+/* 
+The # shows that the first article with the id of whatever follows the # will be affected, effectively allowing you to select certain elements to give attributes to.
+*/
+article#tour_summary>h1 {
+    font-size: 2.2em;
+    letter-spacing: 0.2em;
+}
+
+article#tour_summary>p {
+    font-size: 1.1em;
+}
+
+/* 
+First, the article#tour_summary explains that inside of an article with the id class of tour summary, only the following elements would be affected. The paragraph prefaced by the ">" is to show that those paragraphs will have the same qualities as the article. The pseudo-elements following show that the first of type, or the first paragraph, will have only the first line of the elements given the attributes listed under it. This means that the first line of the first paragraph inside the article with the id "tour_summary" would be given a font size of 1.2 em, and be in small caps, which is applied using the font-variant tag.
+*/
+article#tour_summary>p:first-of-type:first-line {
+    font-size: 1.2em;
+    font-variant: small-caps;
+}
+
 /* Aside Styles */
+/* 
+The headers nested inside of the aside tag given the name tour_itinerary are affected.
+*/
+aside#tour_itinerary>h1 {
+    font-size: 1.2 em;
+}
+
+aside#tour_itinerary>h2 {
+    font-size: 0.9em;
+}
+
+/* 
+This does the same thing as above, but sets it to every paragraph.
+*/
+aside#tour_itinerary>p {
+    font-size: 0.8em;
+}
+
+/* 
+The following statements say that the selector of every odd (selected using the nth of type pseudo-element)heading (with the second most importance) and paragraph inside of the aside tag with the id of tour itinerary is set to a gray color(Set by rgb values). These share the same attributes as the aside tag. The same syntax is used with the other one except for even numbered headers and paragraphs
+*/
+aside#tour_itinerary>h2:nth-of-type(odd),
+aside#tour_itinerary>p:nth-of-type(odd) {
+    color: rgb(79, 91, 40);
+}
+
+aside#tour_itinerary>h2:nth-of-type(even),
+aside#tour_itinerary>p:nth-of-type(even) {
+    color: rgb(81, 95, 175);
+}
+
 /* Blockquote Styles */
+blockquote {
+    background-color: rgb(173, 189, 227);
+    color: rgba(255, 255, 255, 0.6);
+}
+
+blockquote>p {
+    padding: 2.5px 10px;
+}
